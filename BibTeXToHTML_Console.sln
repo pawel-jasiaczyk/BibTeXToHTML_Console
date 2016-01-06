@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibTeXToHTML_Console", "BibTeXToHTML_Console\BibTeXToHTML_Console.csproj", "{758161EE-A411-4AE3-9835-DA9608EBD16F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibManFunctionality", "..\..\Biblioteki\BibManFunctionality\BibManFunctionality\BibManFunctionality.csproj", "{9CE1A4E8-D430-4571-AD20-F257BEBDA9B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibTeX", "..\..\Biblioteki\BibTeX\BibTeX.csproj", "{2A32B69F-6D77-42C7-8A1D-767D51C1F9A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibToHtml", "..\..\Biblioteki\BibToHtml\BibToHtml.csproj", "{A2B3A546-A7BA-49A3-8B21-C98E9A528965}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibTeXToHTML", "..\..\Biblioteki\BibTeXToHTML\BibTeXToHTML.csproj", "{6897868B-6289-48BC-8C02-E231455533A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A32B69F-6D77-42C7-8A1D-767D51C1F9A2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2A32B69F-6D77-42C7-8A1D-767D51C1F9A2}.Debug|x86.Build.0 = Debug|Any CPU
+		{2A32B69F-6D77-42C7-8A1D-767D51C1F9A2}.Release|x86.ActiveCfg = Release|Any CPU
+		{2A32B69F-6D77-42C7-8A1D-767D51C1F9A2}.Release|x86.Build.0 = Release|Any CPU
+		{6897868B-6289-48BC-8C02-E231455533A7}.Debug|x86.ActiveCfg = Debug|x86
+		{6897868B-6289-48BC-8C02-E231455533A7}.Debug|x86.Build.0 = Debug|x86
+		{6897868B-6289-48BC-8C02-E231455533A7}.Release|x86.ActiveCfg = Release|x86
+		{6897868B-6289-48BC-8C02-E231455533A7}.Release|x86.Build.0 = Release|x86
+		{758161EE-A411-4AE3-9835-DA9608EBD16F}.Debug|x86.ActiveCfg = Debug|x86
+		{758161EE-A411-4AE3-9835-DA9608EBD16F}.Debug|x86.Build.0 = Debug|x86
+		{758161EE-A411-4AE3-9835-DA9608EBD16F}.Release|x86.ActiveCfg = Release|x86
+		{758161EE-A411-4AE3-9835-DA9608EBD16F}.Release|x86.Build.0 = Release|x86
+		{9CE1A4E8-D430-4571-AD20-F257BEBDA9B4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9CE1A4E8-D430-4571-AD20-F257BEBDA9B4}.Debug|x86.Build.0 = Debug|Any CPU
+		{9CE1A4E8-D430-4571-AD20-F257BEBDA9B4}.Release|x86.ActiveCfg = Release|Any CPU
+		{9CE1A4E8-D430-4571-AD20-F257BEBDA9B4}.Release|x86.Build.0 = Release|Any CPU
+		{A2B3A546-A7BA-49A3-8B21-C98E9A528965}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A2B3A546-A7BA-49A3-8B21-C98E9A528965}.Debug|x86.Build.0 = Debug|Any CPU
+		{A2B3A546-A7BA-49A3-8B21-C98E9A528965}.Release|x86.ActiveCfg = Release|Any CPU
+		{A2B3A546-A7BA-49A3-8B21-C98E9A528965}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

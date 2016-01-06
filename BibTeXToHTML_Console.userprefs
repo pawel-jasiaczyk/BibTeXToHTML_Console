@@ -1,0 +1,14 @@
+﻿<Properties StartupItem="BibTeXToHTML_Console/BibTeXToHTML_Console.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../Biblioteki/BibTeXToHTML/Project/ConversionProject.cs">
+    <Files>
+      <File FileName="../../Biblioteki/BibTeXToHTML/Project/ConversionProject.cs" Line="127" Column="40" />
+      <File FileName="../../Biblioteki/BibTeXToHTML/Style/BibTeXToHTML_Style.cs" Line="116" Column="21" />
+      <File FileName="BibTeXToHTML_Console/Program.cs" Line="26" Column="32" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
