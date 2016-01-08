@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibTeX", "..\..\Biblioteki\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibToHtml", "..\..\Biblioteki\BibToHtml\BibToHtml.csproj", "{A2B3A546-A7BA-49A3-8B21-C98E9A528965}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibTeXToHTML", "..\..\Biblioteki\BibTeXToHTML\BibTeXToHTML.csproj", "{6897868B-6289-48BC-8C02-E231455533A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibTeXtoHTML", "..\..\Biblioteki\BibTeXToHTML\BibTeXtoHTML.csproj", "{6897868B-6289-48BC-8C02-E231455533A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,5 +37,24 @@ Global
 		{A2B3A546-A7BA-49A3-8B21-C98E9A528965}.Debug|x86.Build.0 = Debug|Any CPU
 		{A2B3A546-A7BA-49A3-8B21-C98E9A528965}.Release|x86.ActiveCfg = Release|Any CPU
 		{A2B3A546-A7BA-49A3-8B21-C98E9A528965}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = BibTeXToHTML_Console\BibTeXToHTML_Console.csproj
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
+		$0.TextStylePolicy = $2
+		$2.FileWidth = 120
+		$2.inheritsSet = VisualStudio
+		$2.inheritsScope = text/plain
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.AfterDelegateDeclarationParameterComma = True
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/x-csharp
+		$3.scope = text/x-csharp
+		$0.VersionControlPolicy = $4
+		$4.inheritsSet = Mono
 	EndGlobalSection
 EndGlobal

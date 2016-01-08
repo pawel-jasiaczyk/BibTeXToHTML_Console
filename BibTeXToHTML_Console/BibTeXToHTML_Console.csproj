@@ -46,13 +46,13 @@
       <Project>{2A32B69F-6D77-42C7-8A1D-767D51C1F9A2}</Project>
       <Name>BibTeX</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Biblioteki\BibTeXToHTML\BibTeXToHTML.csproj">
-      <Project>{6897868B-6289-48BC-8C02-E231455533A7}</Project>
-      <Name>BibTeXToHTML</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Biblioteki\BibToHtml\BibToHtml.csproj">
       <Project>{A2B3A546-A7BA-49A3-8B21-C98E9A528965}</Project>
       <Name>BibToHtml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Biblioteki\BibTeXToHTML\BibTeXtoHTML.csproj">
+      <Project>{6897868B-6289-48BC-8C02-E231455533A7}</Project>
+      <Name>BibTeXtoHTML</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
