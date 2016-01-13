@@ -13,21 +13,24 @@ namespace BibTeXToHTML_Console
     {
         public static void Main (string[] args)
         {
-            args = FirstConsoleApp ();
-        }
-
-        static string[] FirstConsoleApp ()
-        {
-            string[] args;
             args = new string[] {
                 "-a",
-                "wos-mariusz.bib",
+                "wos-mariusz_blad.bib",
                 "-o",
-                "test.html"
+                "test.html",
+                "-p"
             };
+            FirstConsoleApp (args);
+        }
+
+        static void FirstConsoleApp (string[] args)
+        {
             // Eksperymenty ();
             bool fail = false;
+            bool print = false;
             ConversionProject project = new ConversionProject ();
+            AddTestFunctions_N (project.BibTeXDataBase.BibTeXTranslator);
+            AddTestFunctions_P (project.BibTeXDataBase.BibTeXTranslator);
             for (int i = 0; i < args.Length; i++) {
                 if (fail)
                     break;
@@ -49,17 +52,23 @@ namespace BibTeXToHTML_Console
                         }
                         break;
                     }
-                    case "-o": {
+                    case "-o": 
+                    {
                         i++;
                         if (i < args.Length) {
                             project.OutputFileName = args [i];
-                            i++;
                         }
                         break;
                     }
-                    case "-s": {
+                    case "-s": 
+                    {
                         break;
                     }
+                    case "-p":
+                        {
+                            print = true;
+                            break;
+                        }
                     default: {
                         Console.WriteLine ("Nieznane polecenie {0}", args [i]);
                         fail = true;
@@ -73,14 +82,22 @@ namespace BibTeXToHTML_Console
                 }
             }
             if (project.OutputFileName != null) {
-                project.ProceedBibTeXFiles ();
-                project.GetHtml ();
-                project.SaveHtml ();
+                try
+                {
+                    project.ProceedBibTeXFiles ();
+                    project.GetHtml ();
+                    project.SaveHtml ();
+                    if(print)
+                        Console.WriteLine(project.HtmlFile.Text);
+                }
+                catch(Exception ex) 
+                {
+                    Console.WriteLine (ex.Message);
+                }
             }
             else {
                 Console.WriteLine ("Musisz podać nazwę pliku wyjśiowego");
             }
-            return args;
         }
 
         static void Eksperymenty ()
@@ -92,6 +109,34 @@ namespace BibTeXToHTML_Console
             project.ProceedBibTeXFiles ();
             project.GetHtml ();
             project.SaveHtml ();
+        }
+
+        static void AddTestFunctions_N(BibTeX.Translator.BibTeXTranslator translator)
+        {
+            LaTeXFunction_N textbraceleft = new LaTeXFunction_N ();
+            textbraceleft.DefaultResponse = "{";
+            textbraceleft.Name = "textbraceleft";
+
+            LaTeXFunction_N textbraceright = new LaTeXFunction_N ();
+            textbraceright.DefaultResponse = "}";
+            textbraceright.Name = "textbraceright";
+
+            translator.LaTeXFunctions.Add (textbraceleft);
+            translator.LaTeXFunctions.Add (textbraceright);
+        }
+
+        static void AddTestFunctions_P(BibTeX.Translator.BibTeXTranslator translator)
+        {
+            LaTeXFunction_P mbox = new LaTeXFunction_P ();
+            mbox.DefaultResponse = "{0}";
+            mbox.Name = "mbox";
+
+            LaTeXFunction_P k = new LaTeXFunction_P ();
+            k.Name = "k";
+            k.Responses.Add (new LaTeXFunction_P.OneParameterResponse{ Input = "a", Response = "ą" });
+
+            translator.LaTeXFunctions.Add (mbox);
+            translator.LaTeXFunctions.Add (k);
         }
     }
 }
