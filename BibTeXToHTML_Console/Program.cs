@@ -29,8 +29,8 @@ namespace BibTeXToHTML_Console
             bool fail = false;
             bool print = false;
             ConversionProject project = new ConversionProject ();
-            AddTestFunctions_N (project.BibTeXDataBase.BibTeXTranslator);
-            AddTestFunctions_P (project.BibTeXDataBase.BibTeXTranslator);
+            SetProject (project);
+
             for (int i = 0; i < args.Length; i++) {
                 if (fail)
                     break;
@@ -100,6 +100,18 @@ namespace BibTeXToHTML_Console
             }
         }
 
+        static void SetProject(ConversionProject project)
+        {
+            AddTestFunctions_N (project.BibTeXDataBase.BibTeXTranslator);
+            AddTestFunctions_P (project.BibTeXDataBase.BibTeXTranslator);
+            AddTestFunctions_PP (project.BibTeXDataBase.BibTeXTranslator);
+
+//            project.BibTeXDataBase.UseLocalTranslator = false;
+//            project.BibToHtmlExporter.Translator = project.BibTeXDataBase.BibTeXTranslator;
+//            project.BibToHtmlExporter.UseLocalTranslator = true;
+
+        }
+
         static void Eksperymenty ()
         {
             Console.WriteLine ("Eksperymenty");
@@ -121,8 +133,13 @@ namespace BibTeXToHTML_Console
             textbraceright.DefaultResponse = "}";
             textbraceright.Name = "textbraceright";
 
+            LaTeXFunction_N l = new LaTeXFunction_N ();
+            l.Name = "l";
+            l.DefaultResponse = "ł";
+
             translator.LaTeXFunctions.Add (textbraceleft);
             translator.LaTeXFunctions.Add (textbraceright);
+            translator.LaTeXFunctions.Add (l);
         }
 
         static void AddTestFunctions_P(BibTeX.Translator.BibTeXTranslator translator)
@@ -137,6 +154,15 @@ namespace BibTeXToHTML_Console
 
             translator.LaTeXFunctions.Add (mbox);
             translator.LaTeXFunctions.Add (k);
+        }
+
+        static void AddTestFunctions_PP (BibTeX.Translator.BibTeXTranslator translator)
+        {
+            LaTeXFunction_PP frac = new LaTeXFunction_PP ();
+            frac.Name = "frac";
+            frac.DefaultResponse = "({0})/({1}) <p>";
+
+            translator.LaTeXFunctions.Add (frac);
         }
     }
 }

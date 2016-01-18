@@ -1,10 +1,11 @@
 ﻿<Properties StartupItem="BibTeXToHTML_Console/BibTeXToHTML_Console.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../Biblioteki/BibTeX/BibTeX/Translator/BibTeXTranslator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../Biblioteki/BibTeXToHTML/Project/ConversionProject.cs">
     <Files>
-      <File FileName="../../Biblioteki/BibTeX/BibTeX/Translator/BibTeXTranslator.cs" Line="153" Column="25" />
-      <File FileName="../../Biblioteki/BibTeX/BibTeX/Translator/LaTeXFunction.cs" Line="1" Column="1" />
-      <File FileName="../../Biblioteki/BibTeX/BibTeX/Translator/LaTeXFunction_N.cs" Line="1" Column="1" />
+      <File FileName="BibTeXToHTML_Console/Program.cs" Line="1" Column="1" />
+      <File FileName="../../Biblioteki/BibToHtml/Converter/FieldOptions.cs" Line="1" Column="1" />
+      <File FileName="../../Biblioteki/BibToHtml/Converter/BibToHtmlExporter.cs" Line="1" Column="1" />
+      <File FileName="../../Biblioteki/BibTeXToHTML/Project/ConversionProject.cs" Line="173" Column="50" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
