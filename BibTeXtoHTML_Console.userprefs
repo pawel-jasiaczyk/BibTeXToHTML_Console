@@ -1,11 +1,8 @@
 ﻿<Properties StartupItem="BibTeXToHTML_Console/BibTeXToHTML_Console.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../Biblioteki/BibTeXToHTML/Project/ConversionProject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BibTeXToHTML_Console/Program.cs">
     <Files>
-      <File FileName="BibTeXToHTML_Console/Program.cs" Line="1" Column="1" />
-      <File FileName="../../Biblioteki/BibToHtml/Converter/FieldOptions.cs" Line="1" Column="1" />
-      <File FileName="../../Biblioteki/BibToHtml/Converter/BibToHtmlExporter.cs" Line="1" Column="1" />
-      <File FileName="../../Biblioteki/BibTeXToHTML/Project/ConversionProject.cs" Line="173" Column="50" />
+      <File FileName="BibTeXToHTML_Console/Program.cs" Line="186" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
