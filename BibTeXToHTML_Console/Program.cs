@@ -7,6 +7,10 @@ using BibTeX.Translator;
 using BibToHtml;
 using BibToHtml.Converter.Styles;
 
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
 namespace BibTeXToHTML_Console
 {
     class MainClass
@@ -20,8 +24,36 @@ namespace BibTeXToHTML_Console
                 "test.html",
                 "-p"
             };
-            // FirstConsoleApp (args);
-            CloneTest();
+            FirstConsoleApp (args);
+            // CloneTest();
+            // StyleGenerator.GenerateStyle();
+            //serializationTest();
+        }
+
+        static void serializationTest()
+        {
+            BibTeXTranslator tr = new BibTeXTranslator ();
+            //StyleGenerator.CreateAlphabetFunctions (tr);
+            // tr.LaTeXFunctions.Add(new LaTeXFunction_N{Name = "test"});
+            // tr.LaTeXFunctions.Add(new LaTeXFunction_P{Name = "test2"});
+
+            LaTeXFunction_N N = new LaTeXFunction_N ();
+            N.Name = "N";
+
+            tr.LaTeXFunctions.Add (N);
+
+            string path = "./test.xml";
+            XmlSerializer ser = new XmlSerializer(typeof(BibTeXTranslator));
+            TextWriter wr = new StreamWriter(path);
+            try 
+            {
+                ser.Serialize(wr, tr); 
+            }
+            catch (Exception ex)
+            { 
+                Console.WriteLine (ex.ToString());
+            }
+            finally { wr.Close(); }
         }
 
         static void CloneTest()
@@ -60,8 +92,9 @@ namespace BibTeXToHTML_Console
             bool fail = false;
             bool print = false;
             ConversionProject project = new ConversionProject ();
+            // SetTestStyle (project);
             SetProject (project);
-            SetTestStyle (project);
+
 
             for (int i = 0; i < args.Length; i++) {
                 if (fail)
@@ -125,7 +158,7 @@ namespace BibTeXToHTML_Console
                 }
                 catch(Exception ex) 
                 {
-                    Console.WriteLine (ex.Message);
+                    Console.WriteLine (ex.ToString());
                 }
             }
             else {
@@ -139,15 +172,13 @@ namespace BibTeXToHTML_Console
 
         static void SetProject(ConversionProject project)
         {
-            AddTestFunctions_N (project.BibTeXDataBase.BibTeXTranslator);
-            AddTestFunctions_P (project.BibTeXDataBase.BibTeXTranslator);
-            AddTestFunctions_PP (project.BibTeXDataBase.BibTeXTranslator);
-            AddTestMathFunctions_P (project.BibTeXDataBase.BibTeXTranslator);
-
-//            project.BibTeXDataBase.UseLocalTranslator = false;
-//            project.BibToHtmlExporter.Translator = project.BibTeXDataBase.BibTeXTranslator;
-//            project.BibToHtmlExporter.UseLocalTranslator = true;
-
+//            AddTestFunctions_N (project.BibTeXtoHTML_Style.BibTeXTranslator);
+//            AddTestFunctions_P (project.BibTeXtoHTML_Style.BibTeXTranslator);
+//            AddTestFunctions_PP (project.BibTeXtoHTML_Style.BibTeXTranslator);
+//            AddTestMathFunctions_P (project.BibTeXtoHTML_Style.BibTeXTranslator);
+//            AddTestFunctions_OP(project.BibTeXtoHTML_Style.BibTeXTranslator);
+            project.BibTeXtoHTML_Style = BibTeXtoHTML_Style.ReadFromFile("./test.xst");
+            project.BibTeXtoHTML_Style.ForceChanges ();
         }
 
         static void Eksperymenty ()
@@ -205,7 +236,7 @@ namespace BibTeXToHTML_Console
             frac.Name = "frac";
             frac.DefaultResponse = "({0})/({1}) <p>";
 
-            translator.LaTeXFunctions.Add (frac);
+            //translator.LaTeXFunctions.Add (frac);
         }
 
         static void AddTestMathFunctions_P(BibTeX.Translator.BibTeXTranslator translator)
@@ -235,6 +266,16 @@ namespace BibTeXToHTML_Console
             translator.MathFunctions.Add (frac);
         }
 
+        static void AddTestFunctions_OP(BibTeX.Translator.BibTeXTranslator translator)
+        {
+            LaTeXFunction_OP test = new LaTeXFunction_OP ();
+            test.DefaultResponse = "argument:{0}";
+            test.DefaultResponseWithOptionalContent = "argument:{0}, opArg:{1}";
+            test.Name = "test";
+
+            translator.LaTeXFunctions.Add (test);
+        }
+
         static void SetTestStyle(ConversionProject project)
         {
             FieldStyle test = new FieldStyle ("title");
@@ -244,7 +285,22 @@ namespace BibTeXToHTML_Console
             project.BibTeXtoHTML_Style.HtmlExporterStyle.DefaultPositionStyle.FieldStyles.Add (test);
             project.BibTeXtoHTML_Style.HtmlExporterStyle.DefaultPositionStyle.Separator = ", ";
             project.BibTeXtoHTML_Style.HtmlExporterStyle.DefaultPositionStyle.ParagraphParameters = 
-                "style=\"display:inline-table;\"";
+                " style=\"display:inline-table;\"";
+            project.BibTeXtoHTML_Style.HtmlExporterStyle.SetHtmlHead = true;
+            project.BibTeXtoHTML_Style.HtmlExporterStyle.HtmlHead = "<head>\r\n" +
+                    "<meta charset=\"UTF-8\">\r\n" +
+                    "<script type=\"text/x-mathjax-config\">\r\n" + 
+                        "MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});\r\n" +
+                    "</script>\r\n" +
+                    "<script type=\"text/javascript\" async\r\n" +
+                        "src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML\">" +
+                    "</script>" +
+                "</head>";
+
+            project.BibTeXtoHTML_Style.BibTeXTranslator.ExecuteMath = 
+                BibTeXTranslator.MathExecutionType.NoIngeretion;
+            project.BibTeXtoHTML_Style.BibTeXTranslator.RemoveBracesInMathMode = false;
+
             project.BibTeXtoHTML_Style.ForceChanges ();
         }
     }

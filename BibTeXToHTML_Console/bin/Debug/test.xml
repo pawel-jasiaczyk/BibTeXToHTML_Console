@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BibTeXtoHTML_Style xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <HtmlExporterStyle Name="Nienazwany">
+    <PositionStyles />
+    <SortOrder />
+    <DefaultPositionStyle PositionStyleType="global" UseIt="true">
+      <PositionTypes />
+      <PositionNames />
+      <DefaultFieldStyle UseIt="false">
+        <Tags />
+        <Prefix />
+        <Suffix />
+        <NonTaggedPrefix />
+        <NonTaggedSuffix />
+      </DefaultFieldStyle>
+      <FieldStyles />
+      <FieldSortObjects>
+        <FieldSortObject FieldSort="ByPositionedFieldStyle">
+          <TextList />
+          <PositionedFieldStyles>
+            <PositionedFieldStyle>
+              <FieldsOnPosition>
+                <string>author</string>
+                <string>editor</string>
+              </FieldsOnPosition>
+              <StyleForThisFieldPosition UseIt="true">
+                <Tags>
+                  <SupportedHtmlTags>b</SupportedHtmlTags>
+                </Tags>
+                <Prefix />
+                <Suffix />
+                <NonTaggedPrefix />
+                <NonTaggedSuffix />
+              </StyleForThisFieldPosition>
+            </PositionedFieldStyle>
+            <PositionedFieldStyle>
+              <FieldsOnPosition>
+                <string>title</string>
+              </FieldsOnPosition>
+              <StyleForThisFieldPosition UseIt="true">
+                <Tags />
+                <Prefix>"</Prefix>
+                <Suffix>"</Suffix>
+                <NonTaggedPrefix />
+                <NonTaggedSuffix />
+              </StyleForThisFieldPosition>
+            </PositionedFieldStyle>
+            <PositionedFieldStyle>
+              <FieldsOnPosition>
+                <string>date</string>
+                <string>year</string>
+              </FieldsOnPosition>
+              <StyleForThisFieldPosition UseIt="false">
+                <Tags />
+                <Prefix />
+                <Suffix />
+                <NonTaggedPrefix />
+                <NonTaggedSuffix />
+              </StyleForThisFieldPosition>
+            </PositionedFieldStyle>
+          </PositionedFieldStyles>
+        </FieldSortObject>
+      </FieldSortObjects>
+      <Separator>, </Separator>
+    </DefaultPositionStyle>
+    <SetHtmlHead>true</SetHtmlHead>
+    <HtmlHead>&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;script type="text/x-mathjax-config"&gt;
+MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\(','\)']]}});
+&lt;/script&gt;
+&lt;script type="text/javascript" async
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"&gt;&lt;/script&gt;&lt;/head&gt;</HtmlHead>
+  </HtmlExporterStyle>
+  <BibTeXTranslator>
+    <LaTeXFunctions>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses />
+        <DefaultResponse>\`{{{0}}}</DefaultResponse>
+        <Name>`</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses>
+          <OneParameterResponse>
+            <Input>c</Input>
+            <Response>ć</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>C</Input>
+            <Response>Ć</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>n</Input>
+            <Response>ń</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>N</Input>
+            <Response>Ń</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>o</Input>
+            <Response>ó</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>O</Input>
+            <Response>Ó</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>s</Input>
+            <Response>ś</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>S</Input>
+            <Response>Ś</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>z</Input>
+            <Response>ź</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>Z</Input>
+            <Response>Ź</Response>
+          </OneParameterResponse>
+        </Responses>
+        <DefaultResponse>\'{{{0}}}</DefaultResponse>
+        <Name>'</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses />
+        <DefaultResponse>\^{{{0}}}</DefaultResponse>
+        <Name>^</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses />
+        <DefaultResponse>\"{{{0}}}</DefaultResponse>
+        <Name>"</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses />
+        <DefaultResponse>\H{{{0}}}</DefaultResponse>
+        <Name>H</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses />
+        <DefaultResponse>\~{{{0}}}</DefaultResponse>
+        <Name>~</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses />
+        <DefaultResponse>\c{{{0}}}</DefaultResponse>
+        <Name>c</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses />
+        <DefaultResponse>\={{{0}}}</DefaultResponse>
+        <Name>=</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses />
+        <DefaultResponse>\b{{{0}}}</DefaultResponse>
+        <Name>b</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses>
+          <OneParameterResponse>
+            <Input>a</Input>
+            <Response>ą</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>A</Input>
+            <Response>Ą</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>e</Input>
+            <Response>ę</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>E</Input>
+            <Response>Ę</Response>
+          </OneParameterResponse>
+        </Responses>
+        <DefaultResponse>\k{{{0}}}</DefaultResponse>
+        <Name>k</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_N">
+        <Name>l</Name>
+        <DefaultResponse>ł</DefaultResponse>
+        <IngonreInMathMode>false</IngonreInMathMode>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_N">
+        <Name>L</Name>
+        <DefaultResponse>Ł</DefaultResponse>
+        <IngonreInMathMode>false</IngonreInMathMode>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses>
+          <OneParameterResponse>
+            <Input>a</Input>
+            <Response>ȧ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>A</Input>
+            <Response>Ȧ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>b</Input>
+            <Response>ḃ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>B</Input>
+            <Response>Ḃ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>c</Input>
+            <Response>ċ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>C</Input>
+            <Response>Ċ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>d</Input>
+            <Response>ḋ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>D</Input>
+            <Response>Ḋ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>e</Input>
+            <Response>ė</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>E</Input>
+            <Response>Ė</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>f</Input>
+            <Response>ḟ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>F</Input>
+            <Response>Ḟ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>g</Input>
+            <Response>ġ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>G</Input>
+            <Response>Ġ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>h</Input>
+            <Response>ḣ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>H</Input>
+            <Response>Ḣ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>I</Input>
+            <Response>İ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>m</Input>
+            <Response>ṁ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>M</Input>
+            <Response>Ṁ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>n</Input>
+            <Response>ṅ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>N</Input>
+            <Response>Ṅ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>o</Input>
+            <Response>ȯ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>O</Input>
+            <Response>Ȯ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>p</Input>
+            <Response>ṗ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>P</Input>
+            <Response>Ṗ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>r</Input>
+            <Response>ṙ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>R</Input>
+            <Response>Ṙ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>s</Input>
+            <Response>ṡ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>S</Input>
+            <Response>Ṡ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>t</Input>
+            <Response>ṫ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>T</Input>
+            <Response>Ṫ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>w</Input>
+            <Response>ẇ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>W</Input>
+            <Response>Ẇ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>x</Input>
+            <Response>ẋ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>X</Input>
+            <Response>Ẋ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>y</Input>
+            <Response>ẏ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>Y</Input>
+            <Response>Ẏ</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>z</Input>
+            <Response>ż</Response>
+          </OneParameterResponse>
+          <OneParameterResponse>
+            <Input>Z</Input>
+            <Response>Ż</Response>
+          </OneParameterResponse>
+        </Responses>
+        <DefaultResponse>\.{{{0}}}</DefaultResponse>
+        <Name>.</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses />
+        <DefaultResponse>\d{{{0}}}</DefaultResponse>
+        <Name>d</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses />
+        <DefaultResponse>\r{{{0}}}</DefaultResponse>
+        <Name>r</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses />
+        <DefaultResponse>\u{{{0}}}</DefaultResponse>
+        <Name>u</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses />
+        <DefaultResponse>\v{{{0}}}</DefaultResponse>
+        <Name>v</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_P">
+        <IngonreInMathMode>false</IngonreInMathMode>
+        <Responses />
+        <DefaultResponse>\t{{{0}}}</DefaultResponse>
+        <Name>t</Name>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_N">
+        <Name>o</Name>
+        <DefaultResponse>ø</DefaultResponse>
+        <IngonreInMathMode>false</IngonreInMathMode>
+      </LaTeXFunction>
+      <LaTeXFunction xsi:type="LaTeXFunction_N">
+        <Name>O</Name>
+        <DefaultResponse>Ø</DefaultResponse>
+        <IngonreInMathMode>false</IngonreInMathMode>
+      </LaTeXFunction>
+    </LaTeXFunctions>
+    <AuthorFieldAnalizers />
+    <ExecuteMath>NoIngeretion</ExecuteMath>
+    <MathFunctions />
+    <MathSurroundString_Place>$$$$</MathSurroundString_Place>
+    <RemoveBracesInMathMode>false</RemoveBracesInMathMode>
+    <TranslateMathMarker>$$$$</TranslateMathMarker>
+  </BibTeXTranslator>
+</BibTeXtoHTML_Style>

@@ -2,7 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="BibTeXToHTML_Console/Program.cs">
     <Files>
-      <File FileName="BibTeXToHTML_Console/Program.cs" Line="186" Column="32" />
+      <File FileName="BibTeXToHTML_Console/Program.cs" Line="27" Column="13" />
+      <File FileName="../../Biblioteki/BibTeXToHTML/Project/ConversionProject.cs" Line="210" Column="16" />
+      <File FileName="BibTeXToHTML_Console/StyleGenerator.cs" Line="21" Column="78" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
