@@ -28,6 +28,8 @@ namespace BibTeXToHTML_Console
             // CloneTest();
             // StyleGenerator.GenerateStyle();
             //serializationTest();
+
+            Console.ReadLine();
         }
 
         static void serializationTest()

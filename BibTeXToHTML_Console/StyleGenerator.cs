@@ -251,7 +251,7 @@ namespace BibTeXToHTML_Console
 
             #endregion
 
-            #region \u{o}   ŏ   breve over the letter
+            #region u{o}   ŏ   breve over the letter
             //
             // \u{o}   ŏ   breve over the letter
             //
